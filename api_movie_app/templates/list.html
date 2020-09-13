@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>List</title>
+    </head>
+    <body>
+        <div class="container"> 
+            <div class="row">  
+                {% for movie in  movies.Search %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{{movie.Poster}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3 class="card-title">{{movie.Title}} - {{movie.Year}}</h3>
+                            <a href="{% url 'movie-detail' movie.imdbID %}" class="btn btn-primary">Go</a>
+                        </div>
+                    </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+                
+           
+    
+    </body>
+</html>
